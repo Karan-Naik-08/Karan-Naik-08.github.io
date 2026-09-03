@@ -6,6 +6,7 @@ html {
 
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
+  .btn { transition: transform 0.15s ease; }
 }
 
 body {
@@ -85,9 +86,9 @@ a:focus-visible, button:focus-visible {
 .tile-parchment { background: var(--color-canvas-parchment); color: var(--color-ink); }
 .tile-dark { background: var(--color-surface-tile-1); color: var(--color-on-dark); }
 .tile-dark-2 { background: var(--color-surface-tile-2); color: var(--color-on-dark); }
-.tile-dark a, .tile-dark-2 a { color: var(--color-primary-on-dark); }
+.tile-dark a:not(.btn), .tile-dark-2 a:not(.btn) { color: var(--color-primary-on-dark); }
 
-.tile h2 {
+.tile h2, #contact h2 {
   font-size: var(--type-display-lg-size);
   line-height: var(--type-display-lg-lh);
   letter-spacing: var(--type-display-lg-ls);
@@ -127,7 +128,6 @@ a:focus-visible, button:focus-visible {
   font-size: var(--type-body-size);
   font-weight: var(--type-body-weight);
   text-decoration: none;
-  transition: transform 0.15s ease;
 }
 .btn:active { transform: scale(0.95); }
 .btn-primary { background: var(--color-primary); color: var(--color-canvas); }
@@ -246,8 +246,7 @@ a:focus-visible, button:focus-visible {
 .dense-links a {
   font-size: var(--type-dense-link-size);
   line-height: var(--type-dense-link-lh);
-  color: var(--color-ink-muted-80);
-  text-decoration: none;
+  color: var(--color-primary);
 }
 .fine-print {
   font-size: var(--type-fine-print-size);
@@ -265,7 +264,7 @@ a:focus-visible, button:focus-visible {
   .tile { padding: var(--space-section-mobile) 0; }
   #hero h1 { font-size: 34px; }
   .lead { font-size: 20px; }
-  .tile h2 { font-size: 28px; }
+  .tile h2, #contact h2 { font-size: 28px; }
 
   #nav-toggle { display: flex; }
   #nav-links {
