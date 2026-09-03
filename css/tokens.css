@@ -1,0 +1,59 @@
+:root {
+  /* Colors — DESIGN.md "Colors" section, verbatim */
+  --color-primary: #0066cc;
+  --color-primary-focus: #0071e3;
+  --color-primary-on-dark: #2997ff;
+  --color-canvas: #ffffff;
+  --color-canvas-parchment: #f5f5f7;
+  --color-surface-pearl: #fafafc;
+  --color-surface-tile-1: #272729;
+  --color-surface-tile-2: #2a2a2c;
+  --color-surface-black: #000000;
+  --color-hairline: #e0e0e0;
+  --color-ink: #1d1d1f;
+  --color-on-dark: #ffffff;
+  --color-body-muted: #cccccc;
+  --color-ink-muted-80: #333333;
+  --color-ink-muted-48: #7a7a7a;
+
+  /* Typography — DESIGN.md "Typography" section, only the entries this site uses */
+  --font-display: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  --font-text: "SF Pro Text", system-ui, -apple-system, sans-serif;
+
+  --type-hero-size: 56px;      --type-hero-weight: 600; --type-hero-lh: 1.07; --type-hero-ls: -0.28px;
+  --type-display-lg-size: 40px; --type-display-lg-weight: 600; --type-display-lg-lh: 1.1; --type-display-lg-ls: 0;
+  --type-lead-size: 28px;      --type-lead-weight: 400; --type-lead-lh: 1.14; --type-lead-ls: 0.196px;
+  --type-tagline-size: 21px;   --type-tagline-weight: 600; --type-tagline-lh: 1.19; --type-tagline-ls: 0.231px;
+  --type-body-strong-size: 17px; --type-body-strong-weight: 600; --type-body-strong-lh: 1.24; --type-body-strong-ls: -0.374px;
+  --type-body-size: 17px;      --type-body-weight: 400; --type-body-lh: 1.47; --type-body-ls: -0.374px;
+  --type-dense-link-size: 17px; --type-dense-link-weight: 400; --type-dense-link-lh: 2.41; --type-dense-link-ls: 0;
+  --type-caption-size: 14px;   --type-caption-weight: 400; --type-caption-lh: 1.43; --type-caption-ls: -0.224px;
+  --type-caption-strong-size: 14px; --type-caption-strong-weight: 600; --type-caption-strong-lh: 1.29; --type-caption-strong-ls: -0.224px;
+  --type-fine-print-size: 12px; --type-fine-print-weight: 400; --type-fine-print-lh: 1.0; --type-fine-print-ls: -0.12px;
+  --type-nav-link-size: 12px;  --type-nav-link-weight: 400; --type-nav-link-lh: 1.0; --type-nav-link-ls: -0.12px;
+
+  /* Spacing — DESIGN.md "spacing" scale, verbatim */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 17px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  --space-section: 80px;
+  --space-section-mobile: 48px; /* DESIGN.md's documented mobile tile-padding tighten */
+
+  /* Radii — DESIGN.md "rounded" scale, only the entries this site uses */
+  --radius-none: 0px;
+  --radius-sm: 8px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+
+  /* Shadow — DESIGN.md's single product-shadow token. Defined for completeness;
+     unused in this build (no product photography — see design spec). */
+  --shadow-product: rgba(0, 0, 0, 0.22) 3px 5px 30px;
+
+  /* Breakpoints (for reference in comments; media queries hardcode px per DESIGN.md convention) */
+  --bp-tablet: 641px;
+  --bp-desktop: 1024px;
+}
