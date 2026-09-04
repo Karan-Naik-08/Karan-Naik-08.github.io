@@ -230,14 +230,25 @@ a:focus-visible, button:focus-visible {
 /* ---------- Projects ---------- */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-md);
 }
 .project-card {
-  background: var(--color-canvas);
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: var(--color-ink);
+  background: var(--color-surface-pearl);
   border: 1px solid var(--color-hairline);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-product);
 }
 .project-monogram {
   width: 44px;
@@ -259,11 +270,56 @@ a:focus-visible, button:focus-visible {
 .project-tech {
   font-size: var(--type-caption-size);
   color: var(--color-ink-muted-80); /* ink-muted-48 on white measures 4.29:1, below the 4.5:1 constraint */
-  margin-bottom: var(--space-md);
 }
-.project-card p:not(.project-tech) {
-  font-size: var(--type-body-size);
-  line-height: var(--type-body-lh);
+
+/* ---------- Project detail modal ---------- */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(560px, 90vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-product);
+}
+.project-modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+.project-modal .project-monogram { margin-bottom: var(--space-md); }
+.project-modal .project-tech { margin-bottom: var(--space-md); }
+.modal-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--color-canvas-parchment);
+  color: var(--color-ink);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.modal-repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-lg);
+  font-size: var(--type-caption-strong-size);
+  font-weight: var(--type-caption-strong-weight);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.modal-repo-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 /* ---------- Footer ---------- */

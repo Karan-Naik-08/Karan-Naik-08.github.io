@@ -60,7 +60,7 @@
 
 /* ---------- Case study blocks ---------- */
 .case-study-block + .case-study-block { margin-top: var(--space-md); }
-.project-card p.case-study-label {
+.case-study-label {
   font-size: var(--type-caption-strong-size);
   font-weight: var(--type-caption-strong-weight);
   letter-spacing: var(--type-caption-strong-ls);
@@ -68,7 +68,7 @@
   text-transform: uppercase;
   margin-bottom: var(--space-xxs);
 }
-.project-card p.case-study-text {
+.case-study-text {
   font-size: var(--type-body-size);
   line-height: var(--type-body-lh);
   letter-spacing: var(--type-body-ls);
