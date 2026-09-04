@@ -164,12 +164,46 @@ a:focus-visible, button:focus-visible {
   display: flex;
   align-items: center;
 }
-.cert-list {
-  list-style: none;
-  font-size: var(--type-body-size);
-  line-height: var(--type-body-lh);
+/* ---------- Certifications ---------- */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
 }
-.cert-list li { margin-bottom: var(--space-xs); }
+.cert-card {
+  display: block;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.cert-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-product);
+}
+.cert-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--color-canvas-parchment);
+}
+.cert-card-body {
+  padding: var(--space-md) var(--space-lg);
+}
+.cert-title {
+  font-size: var(--type-body-strong-size);
+  font-weight: var(--type-body-strong-weight);
+  line-height: var(--type-body-strong-lh);
+  margin-bottom: var(--space-xxs);
+}
+.cert-meta {
+  font-size: var(--type-caption-size);
+  color: var(--color-ink-muted-80);
+}
 
 /* ---------- Experience / Education (timeline) ---------- */
 .timeline-entry { margin-bottom: var(--space-xxl); }
@@ -257,6 +291,7 @@ a:focus-visible, button:focus-visible {
 /* ---------- Responsive: tablet ---------- */
 @media (max-width: 1023px) {
   .project-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ---------- Responsive: mobile ---------- */
@@ -282,5 +317,6 @@ a:focus-visible, button:focus-visible {
   #nav-links a { padding: var(--space-md) 0; min-height: 44px; }
 
   .cta-row { flex-direction: column; }
+  .cert-grid { grid-template-columns: 1fr; }
   .dense-links { flex-direction: column; gap: var(--space-md); }
 }
