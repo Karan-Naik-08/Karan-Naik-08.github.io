@@ -1,4 +1,6 @@
 (function () {
+  document.documentElement.classList.add('js-motion');
+
   const nav = document.getElementById('nav');
   if (nav) {
     let scrolled = false;
@@ -69,6 +71,7 @@
       const target = parseInt(el.dataset.target, 10);
       const suffix = el.dataset.suffix || '';
       const counter = { val: 0 };
+      el.textContent = '0';
       gsap.to(counter, {
         val: target,
         duration: 1.2,
@@ -82,12 +85,6 @@
           toggleActions: 'play none none none',
         },
       });
-    });
-  });
-
-  gsap.matchMedia().add('(prefers-reduced-motion: reduce)', () => {
-    document.querySelectorAll('.stat-number').forEach((el) => {
-      el.textContent = el.dataset.target + (el.dataset.suffix || '');
     });
   });
 })();

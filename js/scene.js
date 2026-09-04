@@ -76,9 +76,10 @@ import * as THREE from 'three';
   group.add(new THREE.Points(pointsGeometry, pointsMaterial));
 
   const linePositions = [];
+  const LINE_DISTANCE_SQ = LINE_DISTANCE * LINE_DISTANCE;
   for (let i = 0; i < points.length; i++) {
     for (let j = i + 1; j < points.length; j++) {
-      if (points[i].distanceTo(points[j]) < LINE_DISTANCE) {
+      if (points[i].distanceToSquared(points[j]) < LINE_DISTANCE_SQ) {
         linePositions.push(points[i].x, points[i].y, points[i].z, points[j].x, points[j].y, points[j].z);
       }
     }
@@ -89,8 +90,6 @@ import * as THREE from 'three';
   group.add(new THREE.LineSegments(lineGeometry, lineMaterial));
 
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.domElement.setAttribute('role', 'img');
-  renderer.domElement.setAttribute('aria-label', 'Decorative animated network of connected points');
 
   function resize() {
     const { clientWidth, clientHeight } = hero;
@@ -119,13 +118,21 @@ import * as THREE from 'three';
   let currentPointerX = 0;
   let currentPointerY = 0;
 
+  let heroVisible = true;
+  const visibilityObserver = new IntersectionObserver((entries) => {
+    heroVisible = entries[0].isIntersecting;
+  });
+  visibilityObserver.observe(hero);
+
   function animate() {
     autoRotation += 0.0006;
     currentPointerX += (targetRotationX - currentPointerX) * 0.05;
     currentPointerY += (targetRotationY - currentPointerY) * 0.05;
     group.rotation.x = currentPointerX;
     group.rotation.y = autoRotation + currentPointerY;
-    renderer.render(scene, camera);
+    if (heroVisible) {
+      renderer.render(scene, camera);
+    }
     requestAnimationFrame(animate);
   }
   requestAnimationFrame(animate);

@@ -23,7 +23,7 @@
 }
 
 /* ---------- Nav scroll state ---------- */
-#nav {
+.js-motion #nav {
   background: transparent;
   transition: background-color 0.2s ease;
 }
@@ -59,9 +59,8 @@
 }
 
 /* ---------- Case study blocks ---------- */
-.case-study-block { margin-top: var(--space-md); }
-.case-study-block:first-of-type { margin-top: var(--space-sm); }
-.case-study-label {
+.case-study-block + .case-study-block { margin-top: var(--space-md); }
+.project-card p.case-study-label {
   font-size: var(--type-caption-strong-size);
   font-weight: var(--type-caption-strong-weight);
   letter-spacing: var(--type-caption-strong-ls);
@@ -69,7 +68,7 @@
   text-transform: uppercase;
   margin-bottom: var(--space-xxs);
 }
-.case-study-text {
+.project-card p.case-study-text {
   font-size: var(--type-body-size);
   line-height: var(--type-body-lh);
   letter-spacing: var(--type-body-ls);
