@@ -61,9 +61,9 @@ void main(){
     const w100 = Math.max(cx.measureText('KARAN').width, cx.measureText('NAIK').width);
     const availH = H - reserveB - 70 * dpr;
     const portrait = H > W * 1.1;
-    let s = (W - gut * 2) / w100 * 100 * 0.965;
+    let s = (W - gut * 2) / w100 * 100 * (portrait ? 0.95 : 0.72);
     // portrait phones: tall-condensed lettering to fill the empty height
-    const ys = portrait ? Math.min(2.1, Math.max(1, availH / (1.72 * s))) : 1;
+    const ys = portrait ? Math.min(1.6, Math.max(1, availH / (1.72 * s))) : 1;
     if (!portrait) s = Math.min(s, availH / 1.72);
     cx.font = `700 ${s}px ${FONT}`; try { cx.letterSpacing = (-0.04 * s) + 'px'; } catch (e) {}
     const base2 = (H - reserveB) / ys;
