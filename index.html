@@ -1,309 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karan Naik — Data Analyst, ML &amp; Quantitative Systems</title>
-  <meta name="description" content="Portfolio of Karan Naik — Data Analyst and ML practitioner: computer vision pipelines, real-time algorithmic trading systems, and analytics dashboards.">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/styles.css?v=2">
-  <link rel="stylesheet" href="css/motion.css?v=2">
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.185.0/build/three.module.js"
-    }
-  }
-  </script>
+<meta charset="UTF-8">
+<script>document.documentElement.className="js"</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karan Naik — Data Analyst, ML &amp; Quantitative Systems</title>
+<meta name="description" content="Portfolio of Karan Naik — Data Analyst and ML practitioner: computer vision pipelines, real-time algorithmic trading systems, and analytics dashboards.">
+<meta name="theme-color" content="#0c0c0d">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=2">
+<noscript><style>.cs{display:block!important}.cs[hidden]{display:block}.loader{display:none!important}</style></noscript>
 </head>
 <body>
+<a class="skip" href="#about">Skip to content</a>
 
-  <header id="nav">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-brand">Karan Naik</a>
-      <button id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<div class="loader" id="loader" aria-hidden="true"><span class="loader-n" id="loader-n">00</span><span class="loader-t">Karan Naik</span></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-label"></span></div>
+
+<!-- SVG displacement filter used on hover for certificate previews and project numerals -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="warp" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence id="warp-noise" type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="4" result="n"/>
+    <feDisplacementMap id="warp-map" in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<header class="nav" id="nav">
+  <a href="#hero" class="nav-brand" data-cursor="Top">Karan Naik</a>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links"><span>Menu</span></button>
+  <nav id="nav-links" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certs</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section id="hero" class="dark">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <h1 class="hero-h1" id="hero-h1"><span>Karan</span> <span>Naik</span></h1>
+    <div class="hero-meta">
+      <p class="hero-role">Data Analyst, ML &amp; Quantitative Systems<br><span>at Big Rattle Technologies</span></p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-fill" data-magnetic data-cursor="Go">View Work</a>
+        <a href="#contact" class="btn btn-line" data-magnetic data-cursor="Go">Contact</a>
+      </div>
+      <p class="hero-hint" aria-hidden="true"><span class="m">Move your cursor through the name &darr;</span><span class="t">Tap the name &darr;</span></p>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section id="hero" class="tile tile-dark">
-      <canvas id="hero-canvas" aria-hidden="true"></canvas>
-      <div class="tile-inner hero-inner">
-        <h1>Karan Naik</h1>
-        <p class="lead">Data Analyst, ML &amp; Quantitative Systems at Big Rattle Technologies</p>
-        <div class="cta-row">
-          <a href="#projects" class="btn btn-primary">View Work</a>
-          <a href="#contact" class="btn btn-secondary-pill">Contact</a>
-        </div>
-      </div>
-    </section>
+  <div class="marquee dark" aria-hidden="true"><div class="marquee-track">
+    <span>Computer Vision</span><i>✦</i><span>Algorithmic Trading</span><i>✦</i><span>Dashboards</span><i>✦</i><span>FastAPI</span><i>✦</i><span>SQL</span><i>✦</i><span>Machine Learning</span><i>✦</i>
+    <span>Computer Vision</span><i>✦</i><span>Algorithmic Trading</span><i>✦</i><span>Dashboards</span><i>✦</i><span>FastAPI</span><i>✦</i><span>SQL</span><i>✦</i><span>Machine Learning</span><i>✦</i>
+  </div></div>
 
-    <section id="about" class="tile tile-light">
-      <div class="tile-inner">
-        <h2>About</h2>
-        <p class="body-copy">Data analyst and ML practitioner experienced in building computer vision pipelines, real-time algorithmic trading systems, and analytics dashboards. Strong in Python and SQL, with hands-on deployment using FastAPI, Docker, and GCP.</p>
-      </div>
-    </section>
+  <!-- ABOUT -->
+  <section id="about" class="light">
+    <p class="eyebrow">(01) About</p>
+    <h2 class="sr-only">About</h2>
+    <p class="about-text" id="about-text">Data analyst and ML practitioner experienced in building computer vision pipelines, real-time algorithmic trading systems, and analytics dashboards. Strong in Python and SQL, with hands-on deployment using FastAPI, Docker, and GCP.</p>
+  </section>
 
-    <section id="skills" class="tile tile-parchment">
-      <div class="tile-inner">
-        <h2>Skills</h2>
-
-        <h3 class="skill-category">Data Science &amp; ML</h3>
-        <ul class="chip-list">
-          <li class="chip">Python</li>
-          <li class="chip">Pandas</li>
-          <li class="chip">NumPy</li>
-          <li class="chip">scikit-learn</li>
-          <li class="chip">TensorFlow</li>
-          <li class="chip">Matplotlib</li>
-          <li class="chip">Seaborn</li>
-          <li class="chip">OpenCV</li>
-          <li class="chip">Streamlit</li>
-          <li class="chip">SQL</li>
-          <li class="chip">LLMs</li>
-          <li class="chip">NLP</li>
-          <li class="chip">YOLOv8</li>
-          <li class="chip">Predictive Modeling</li>
-          <li class="chip">Time-Series Forecasting</li>
-          <li class="chip">Computer Vision</li>
-        </ul>
-
-        <h3 class="skill-category">Data Analysis &amp; Visualization</h3>
-        <ul class="chip-list">
-          <li class="chip">Power BI</li>
-          <li class="chip">Tableau</li>
-          <li class="chip">Excel</li>
-          <li class="chip">BigQuery</li>
-          <li class="chip">Statistical Analysis</li>
-          <li class="chip">Dashboard Design</li>
-        </ul>
-
-        <h3 class="skill-category">Engineering &amp; Deployment</h3>
-        <ul class="chip-list">
-          <li class="chip">Docker</li>
-          <li class="chip">Linux/Ubuntu</li>
-          <li class="chip">Git/GitHub</li>
-          <li class="chip">GCP</li>
-          <li class="chip">Postman</li>
-          <li class="chip">FastAPI</li>
-        </ul>
-
-      </div>
-    </section>
-
-    <section id="certifications" class="tile tile-light">
-      <div class="tile-inner">
-        <h2>Certifications</h2>
-        <div class="cert-grid">
-
-          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/specialization/TVLEZ99NMUCT" target="_blank" rel="noreferrer">
-            <img class="cert-thumb" src="assets/certs/tableau-data-visualization.jpg" alt="Data Visualization with Tableau specialization certificate">
-            <div class="cert-card-body">
-              <h3 class="cert-title">Data Visualization with Tableau</h3>
-              <p class="cert-meta">University of California, Davis · Specialization · Nov 2023</p>
-            </div>
-          </a>
-
-          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/professional-cert/EFXJKWUH7QY7" target="_blank" rel="noreferrer">
-            <img class="cert-thumb" src="assets/certs/google-data-analytics.jpg" alt="Google Data Analytics professional certificate">
-            <div class="cert-card-body">
-              <h3 class="cert-title">Google Data Analytics</h3>
-              <p class="cert-meta">Google · Professional Certificate · Jan 2023</p>
-            </div>
-          </a>
-
-          <a class="cert-card" href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS32S43941399NPTEL2201059790" target="_blank" rel="noreferrer">
-            <img class="cert-thumb" src="assets/certs/nptel-python-data-science.jpg" alt="NPTEL Python for Data Science Elite certificate">
-            <div class="cert-card-body">
-              <h3 class="cert-title">Python for Data Science — Elite</h3>
-              <p class="cert-meta">IIT Madras · NPTEL · Jan–Feb 2022</p>
-            </div>
-          </a>
-
-          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/professional-cert/NJ8SRRZGMGCV" target="_blank" rel="noreferrer">
-            <img class="cert-thumb" src="assets/certs/google-it-automation-python.jpg" alt="Google IT Automation with Python professional certificate">
-            <div class="cert-card-body">
-              <h3 class="cert-title">Google IT Automation with Python</h3>
-              <p class="cert-meta">Google · Professional Certificate · Oct 2022</p>
-            </div>
-          </a>
-
-          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/specialization/UBKFP3H5RFRN" target="_blank" rel="noreferrer">
-            <img class="cert-thumb" src="assets/certs/machine-learning-stanford.jpg" alt="Machine Learning specialization certificate">
-            <div class="cert-card-body">
-              <h3 class="cert-title">Machine Learning</h3>
-              <p class="cert-meta">DeepLearning.AI &amp; Stanford Online · Specialization · Aug 2022</p>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="tile tile-dark-2">
-      <div class="tile-inner">
-        <h2>Experience</h2>
-
-        <div class="stat-row">
-          <div class="stat">
-            <span class="stat-number" data-target="20000" data-suffix="+">20000+</span>
-            <p class="stat-label">Images processed</p>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-target="80" data-suffix="%">80%</span>
-            <p class="stat-label">Faster processing</p>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-target="900" data-suffix="+">900+</span>
-            <p class="stat-label">NSE stocks monitored</p>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-target="95" data-suffix="%">95%</span>
-            <p class="stat-label">Less manual trading effort</p>
-          </div>
-        </div>
-
-        <article class="timeline-entry">
-          <h3 class="entry-title">Data Analyst, ML &amp; Quantitative Systems — Big Rattle Technologies</h3>
-          <p class="entry-meta">Mumbai, Maharashtra · Nov 2024 – Present</p>
-          <ul class="entry-bullets">
-            <li>Developed a Python-based computer vision pipeline integrating feature engineering (RGB, LBP, HOG, deep features) to automate segregation of 20,000+ images, cutting processing time 80% and saving 56+ hours per project cycle.</li>
-            <li>Designed a real-time algorithmic trading system using Python, WebSockets, and the Dhan API to monitor 900+ NSE stocks, automating trade execution and reducing manual trading effort by over 95%.</li>
-            <li>Built and optimized backend data services by extending Redash and deploying FastAPI endpoints; applied advanced SQL indexing to speed data retrieval ~70% for 50,000+ daily records, improving dashboard responsiveness.</li>
-            <li>Automated LinkedIn content publishing using Docker, MCP Toolkit, and Notion, enabling consistent daily posting and eliminating manual effort.</li>
-          </ul>
-        </article>
-
-        <article class="timeline-entry">
-          <h3 class="entry-title">Data Analyst Intern — Govt. of Maharashtra</h3>
-          <p class="entry-meta">Mantralaya, Mumbai · Aug 2024 – Nov 2024</p>
-          <ul class="entry-bullets">
-            <li>Built 5+ interactive Power BI and Tableau dashboards analyzing election outcomes across 48 Lok Sabha constituencies, enabling faster, data-driven decisions.</li>
-            <li>Analyzed constituency-level election data to identify sub-5,000 vote-margin seats, supporting targeted campaign planning in high-impact regions.</li>
-            <li>Processed and queried 120,000+ records in SQL to support 35 District Information Officers, reducing manual data preparation by ~20 hours per officer.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="tile tile-light">
-      <div class="tile-inner">
-        <h2>Projects</h2>
-        <div class="project-grid">
-
-          <button type="button" class="project-card" data-project="multi-agent-onboarding">
-            <div class="project-monogram">MA</div>
-            <h3>Multi-Agent Employee Onboarding Assistant</h3>
-            <p class="project-tech">Gemini 2.0 Flash · Streamlit</p>
-          </button>
-
-          <button type="button" class="project-card" data-project="gamesphere">
-            <div class="project-monogram">GS</div>
-            <h3>GameSphere: SQL Analytics for Gamers</h3>
-            <p class="project-tech">SQL</p>
-          </button>
-
-          <button type="button" class="project-card" data-project="tweet-emotion">
-            <div class="project-monogram">TE</div>
-            <h3>Tweet Emotion Recognition</h3>
-            <p class="project-tech">TensorFlow · Python · LSTM</p>
-          </button>
-
-          <button type="button" class="project-card" data-project="easy-finance">
-            <div class="project-monogram">EF</div>
-            <h3>Easy Finance</h3>
-            <p class="project-tech">Python · Machine Learning · Flask · Chart.js</p>
-          </button>
-
-          <button type="button" class="project-card" data-project="smart-parking">
-            <div class="project-monogram">SP</div>
-            <h3>Smart Parking Using YOLOv5</h3>
-            <p class="project-tech">YOLOv5 · Python · Computer Vision</p>
-          </button>
-
-          <button type="button" class="project-card" data-project="myloc-amenities">
-            <div class="project-monogram">ML</div>
-            <h3>MyLoc Amenities Finder</h3>
-            <p class="project-tech">Python · Flask · KMeans · JavaScript</p>
-          </button>
-
-          <button type="button" class="project-card" data-project="mmrda-internship">
-            <div class="project-monogram">DS</div>
-            <h3>MMRDA Data Analysis Internship</h3>
-            <p class="project-tech">Python · scikit-learn · EDA</p>
-          </button>
-
-        </div>
-      </div>
-    </section>
-
-    <dialog id="project-modal" class="project-modal">
-      <button type="button" class="modal-close" aria-label="Close">&times;</button>
-      <div class="project-monogram" id="modal-monogram"></div>
-      <h3 id="modal-title"></h3>
-      <p class="project-tech" id="modal-tech"></p>
-      <div class="case-study-block">
-        <p class="case-study-label">Problem</p>
-        <p class="case-study-text" id="modal-problem"></p>
-      </div>
-      <div class="case-study-block">
-        <p class="case-study-label">Approach</p>
-        <p class="case-study-text" id="modal-approach"></p>
-      </div>
-      <div class="case-study-block">
-        <p class="case-study-label">Result</p>
-        <p class="case-study-text" id="modal-result"></p>
-      </div>
-      <a id="modal-repo-link" class="modal-repo-link" href="#" target="_blank" rel="noreferrer">
-        <svg class="modal-repo-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-        View on GitHub
-      </a>
-    </dialog>
-
-    <section id="education" class="tile tile-parchment">
-      <div class="tile-inner">
-        <h2>Education</h2>
-        <article class="timeline-entry">
-          <h3 class="entry-title">Bachelor of Engineering, Computer Science &amp; Engineering (Data Science)</h3>
-          <p class="entry-meta">Vidyavardhini's College of Engineering and Technology, Vasai · Jun 2020 – Jun 2024</p>
-          <ul class="entry-bullets">
-            <li>CGPA: 8.75</li>
-            <li>Honors in Artificial Intelligence and Machine Learning — CGPA: 7</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact">
-    <div class="tile-inner">
-      <h2>Contact</h2>
-      <ul class="dense-links">
-        <li><a href="mailto:naikaran08@gmail.com">naikaran08@gmail.com</a></li>
-        <li><a href="https://linkedin.com/in/karannaik08/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-        <li><a href="https://github.com/Karan-Naik-08" target="_blank" rel="noreferrer">GitHub</a></li>
+  <!-- SKILLS -->
+  <section id="skills" class="dark">
+    <p class="eyebrow">(02) Skills</p>
+    <h2 class="display split">Tools of the trade</h2>
+    <div class="skill-group">
+      <h3>Data Science &amp; ML</h3>
+      <ul class="skill-list">
+        <li>Python</li><li>Pandas</li><li>NumPy</li><li>scikit-learn</li><li>TensorFlow</li><li>Matplotlib</li><li>Seaborn</li><li>OpenCV</li><li>Streamlit</li><li>SQL</li><li>LLMs</li><li>NLP</li><li>YOLOv8</li><li>Predictive Modeling</li><li>Time-Series Forecasting</li><li>Computer Vision</li>
       </ul>
-      <p class="fine-print">&copy; 2026 Karan Naik.</p>
     </div>
-  </footer>
+    <div class="skill-group">
+      <h3>Data Analysis &amp; Visualization</h3>
+      <ul class="skill-list">
+        <li>Power BI</li><li>Tableau</li><li>Excel</li><li>BigQuery</li><li>Statistical Analysis</li><li>Dashboard Design</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Engineering &amp; Deployment</h3>
+      <ul class="skill-list">
+        <li>Docker</li><li>Linux/Ubuntu</li><li>Git/GitHub</li><li>GCP</li><li>Postman</li><li>FastAPI</li>
+      </ul>
+    </div>
+  </section>
 
-  <script src="js/main.js"></script>
-  <script src="js/project-modal.js?v=2"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-  <script type="module" src="js/scene.js"></script>
-  <script type="module" src="js/motion.js"></script>
+  <!-- CERTS -->
+  <section id="certifications" class="light">
+    <p class="eyebrow">(03) Certifications</p>
+    <h2 class="display split">The receipts</h2>
+    <ul class="certs" id="certs">
+      <li><a class="cert" href="https://www.coursera.org/account/accomplishments/specialization/TVLEZ99NMUCT" target="_blank" rel="noreferrer" data-cursor="View" data-img="assets/certs/tableau-data-visualization.jpg">
+        <span class="cert-n" aria-hidden="true">01</span>
+        <span class="cert-main"><span class="cert-title">Data Visualization with Tableau</span><span class="cert-meta">University of California, Davis · Specialization · Nov 2023</span></span>
+        <img class="cert-thumb" src="assets/certs/tableau-data-visualization.jpg" alt="Data Visualization with Tableau specialization certificate" loading="lazy">
+      </a></li>
+      <li><a class="cert" href="https://www.coursera.org/account/accomplishments/professional-cert/EFXJKWUH7QY7" target="_blank" rel="noreferrer" data-cursor="View" data-img="assets/certs/google-data-analytics.jpg">
+        <span class="cert-n" aria-hidden="true">02</span>
+        <span class="cert-main"><span class="cert-title">Google Data Analytics</span><span class="cert-meta">Google · Professional Certificate · Jan 2023</span></span>
+        <img class="cert-thumb" src="assets/certs/google-data-analytics.jpg" alt="Google Data Analytics professional certificate" loading="lazy">
+      </a></li>
+      <li><a class="cert" href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS32S43941399NPTEL2201059790" target="_blank" rel="noreferrer" data-cursor="View" data-img="assets/certs/nptel-python-data-science.jpg">
+        <span class="cert-n" aria-hidden="true">03</span>
+        <span class="cert-main"><span class="cert-title">Python for Data Science — Elite</span><span class="cert-meta">IIT Madras · NPTEL · Jan–Feb 2022</span></span>
+        <img class="cert-thumb" src="assets/certs/nptel-python-data-science.jpg" alt="NPTEL Python for Data Science Elite certificate" loading="lazy">
+      </a></li>
+      <li><a class="cert" href="https://www.coursera.org/account/accomplishments/professional-cert/NJ8SRRZGMGCV" target="_blank" rel="noreferrer" data-cursor="View" data-img="assets/certs/google-it-automation-python.jpg">
+        <span class="cert-n" aria-hidden="true">04</span>
+        <span class="cert-main"><span class="cert-title">Google IT Automation with Python</span><span class="cert-meta">Google · Professional Certificate · Oct 2022</span></span>
+        <img class="cert-thumb" src="assets/certs/google-it-automation-python.jpg" alt="Google IT Automation with Python professional certificate" loading="lazy">
+      </a></li>
+      <li><a class="cert" href="https://www.coursera.org/account/accomplishments/specialization/UBKFP3H5RFRN" target="_blank" rel="noreferrer" data-cursor="View" data-img="assets/certs/machine-learning-stanford.jpg">
+        <span class="cert-n" aria-hidden="true">05</span>
+        <span class="cert-main"><span class="cert-title">Machine Learning</span><span class="cert-meta">DeepLearning.AI &amp; Stanford Online · Specialization · Aug 2022</span></span>
+        <img class="cert-thumb" src="assets/certs/machine-learning-stanford.jpg" alt="Machine Learning specialization certificate" loading="lazy">
+      </a></li>
+    </ul>
+    <div class="cert-preview" id="cert-preview" aria-hidden="true"><img alt="" src=""></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="dark">
+    <p class="eyebrow">(04) Experience</p>
+    <h2 class="display split">Work, with numbers</h2>
+    <div class="stats">
+      <div class="stat"><span class="stat-n" data-target="20000" data-suffix="+">20,000+</span><p>Images processed</p></div>
+      <div class="stat"><span class="stat-n" data-target="80" data-suffix="%">80%</span><p>Faster processing</p></div>
+      <div class="stat"><span class="stat-n" data-target="900" data-suffix="+">900+</span><p>NSE stocks monitored</p></div>
+      <div class="stat"><span class="stat-n" data-target="95" data-suffix="%">95%</span><p>Less manual trading effort</p></div>
+    </div>
+
+    <article class="role">
+      <header>
+        <h3>Data Analyst, ML &amp; Quantitative Systems — Big Rattle Technologies</h3>
+        <p>Mumbai, Maharashtra · Nov 2024 – Present</p>
+      </header>
+      <ul>
+        <li>Developed a Python-based computer vision pipeline integrating feature engineering (RGB, LBP, HOG, deep features) to automate segregation of 20,000+ images, cutting processing time 80% and saving 56+ hours per project cycle.</li>
+        <li>Designed a real-time algorithmic trading system using Python, WebSockets, and the Dhan API to monitor 900+ NSE stocks, automating trade execution and reducing manual trading effort by over 95%.</li>
+        <li>Built and optimized backend data services by extending Redash and deploying FastAPI endpoints; applied advanced SQL indexing to speed data retrieval ~70% for 50,000+ daily records, improving dashboard responsiveness.</li>
+        <li>Automated LinkedIn content publishing using Docker, MCP Toolkit, and Notion, enabling consistent daily posting and eliminating manual effort.</li>
+      </ul>
+    </article>
+    <article class="role">
+      <header>
+        <h3>Data Analyst Intern — Govt. of Maharashtra</h3>
+        <p>Mantralaya, Mumbai · Aug 2024 – Nov 2024</p>
+      </header>
+      <ul>
+        <li>Built 5+ interactive Power BI and Tableau dashboards analyzing election outcomes across 48 Lok Sabha constituencies, enabling faster, data-driven decisions.</li>
+        <li>Analyzed constituency-level election data to identify sub-5,000 vote-margin seats, supporting targeted campaign planning in high-impact regions.</li>
+        <li>Processed and queried 120,000+ records in SQL to support 35 District Information Officers, reducing manual data preparation by ~20 hours per officer.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="light">
+    <div class="proj-head">
+      <p class="eyebrow">(05) Projects</p>
+      <h2 class="display split">Case files</h2>
+      <p class="proj-hint" aria-hidden="true"><span id="proj-count">01</span> / 07 — scroll sideways</p>
+    </div>
+    <div class="hs-view" id="hs-view">
+      <div class="hs-track" id="hs-track">
+
+        <article class="tile" data-project="multi-agent-onboarding">
+          <span class="t-num" aria-hidden="true">01</span>
+          <div class="t-body">
+            <p class="t-tech">Gemini 2.0 Flash · Streamlit</p>
+            <h3 class="t-title"><button type="button" class="t-open" data-cursor="Open" aria-haspopup="dialog">Multi-Agent Employee Onboarding Assistant</button></h3>
+            <span class="t-cta" aria-hidden="true">Read case study &rarr;</span>
+          </div>
+          <div class="cs" hidden>
+            <div data-k="problem">New hires need tool access, a ramp-up plan, and answers to handbook questions — without waiting on a human.</div>
+            <div data-k="approach">Three collaborating agents provision tool access, generate a 30-60-90 day learning plan, and answer HR questions grounded in the company handbook. A JSON-first, LLM-second provisioning agent resolves tools and contacts deterministically before prompting the model.</div>
+            <div data-k="result">Eliminated hallucinated tools and fake contact details. Architected as a layered, testable codebase using the model's 1M-token context to inject full handbooks without a vector database.</div>
+            
+          </div>
+        </article>
+        <article class="tile" data-project="gamesphere">
+          <span class="t-num" aria-hidden="true">02</span>
+          <div class="t-body">
+            <p class="t-tech">SQL</p>
+            <h3 class="t-title"><button type="button" class="t-open" data-cursor="Open" aria-haspopup="dialog">GameSphere: SQL Analytics for Gamers</button></h3>
+            <span class="t-cta" aria-hidden="true">Read case study &rarr;</span>
+          </div>
+          <div class="cs" hidden>
+            <div data-k="problem">A gaming platform needed structured player data and clear engagement/retention insight drawn from it.</div>
+            <div data-k="approach">Designed a relational SQL database with 4 tables and wrote 30+ queries to generate player engagement and retention insights.</div>
+            <div data-k="result">Applied data validation and query optimization to maintain data integrity and improve query performance.</div>
+            
+          </div>
+        </article>
+        <article class="tile" data-project="tweet-emotion">
+          <span class="t-num" aria-hidden="true">03</span>
+          <div class="t-body">
+            <p class="t-tech">TensorFlow · Python · LSTM</p>
+            <h3 class="t-title"><button type="button" class="t-open" data-cursor="Open" aria-haspopup="dialog">Tweet Emotion Recognition</button></h3>
+            <span class="t-cta" aria-hidden="true">Read case study &rarr;</span>
+          </div>
+          <div class="cs" hidden>
+            <div data-k="problem">Classify the emotion behind a tweet — anger, fear, joy, sadness, surprise, or love — from raw, noisy text.</div>
+            <div data-k="approach">Built a deep learning pipeline in TensorFlow/Keras: tokenized and padded tweet text, then trained an embedding + LSTM network to capture sequential context ahead of a dense classification head.</div>
+            <div data-k="result">Evaluated the model on accuracy and loss across all six emotion classes and validated predictions on unseen tweets — a guided Coursera project extended with my own preprocessing and tuning choices.</div>
+            <a data-k="repo" href="https://github.com/Karan-Naik-08/Tweet-Emotion-Recognition" target="_blank" rel="noreferrer">https://github.com/Karan-Naik-08/Tweet-Emotion-Recognition</a>
+          </div>
+        </article>
+        <article class="tile" data-project="easy-finance">
+          <span class="t-num" aria-hidden="true">04</span>
+          <div class="t-body">
+            <p class="t-tech">Python · Machine Learning · Flask · Chart.js</p>
+            <h3 class="t-title"><button type="button" class="t-open" data-cursor="Open" aria-haspopup="dialog">Easy Finance</button></h3>
+            <span class="t-cta" aria-hidden="true">Read case study &rarr;</span>
+          </div>
+          <div class="cs" hidden>
+            <div data-k="problem">People setting a financial goal (a car, a house, a business) have no easy way to translate income, expenses, and savings into a concrete, personalized plan.</div>
+            <div data-k="approach">Built a financial management platform: ML models predict car and house prices from user inputs, and a rules layer turns salary, essential expenses, and goals into a tailored budget plan. A Chart.js dashboard surfaces real-time income/expense and savings-progress metrics.</div>
+            <div data-k="result">Final year major engineering project — shipped an end-to-end system from prediction models to an interactive financial dashboard.</div>
+            <a data-k="repo" href="https://github.com/Karan-Naik-08/Easy-Finance" target="_blank" rel="noreferrer">https://github.com/Karan-Naik-08/Easy-Finance</a>
+          </div>
+        </article>
+        <article class="tile" data-project="smart-parking">
+          <span class="t-num" aria-hidden="true">05</span>
+          <div class="t-body">
+            <p class="t-tech">YOLOv5 · Python · Computer Vision</p>
+            <h3 class="t-title"><button type="button" class="t-open" data-cursor="Open" aria-haspopup="dialog">Smart Parking Using YOLOv5</button></h3>
+            <span class="t-cta" aria-hidden="true">Read case study &rarr;</span>
+          </div>
+          <div class="cs" hidden>
+            <div data-k="problem">Drivers waste time searching for open spots because parking lots have no automated way to report space availability.</div>
+            <div data-k="approach">Trained a custom YOLOv5 object-detection model on a parking-lot dataset to identify occupied vs. empty spaces in real time, with a custom data config for the target lot layout.</div>
+            <div data-k="result">Model reliably flags available spaces from camera input, laying the groundwork for a live occupancy feed.</div>
+            <a data-k="repo" href="https://github.com/Karan-Naik-08/Smart_Parking-Using_Yolov5" target="_blank" rel="noreferrer">https://github.com/Karan-Naik-08/Smart_Parking-Using_Yolov5</a>
+          </div>
+        </article>
+        <article class="tile" data-project="myloc-amenities">
+          <span class="t-num" aria-hidden="true">06</span>
+          <div class="t-body">
+            <p class="t-tech">Python · Flask · KMeans · JavaScript</p>
+            <h3 class="t-title"><button type="button" class="t-open" data-cursor="Open" aria-haspopup="dialog">MyLoc Amenities Finder</button></h3>
+            <span class="t-cta" aria-hidden="true">Read case study &rarr;</span>
+          </div>
+          <div class="cs" hidden>
+            <div data-k="problem">Finding nearby amenities is easy; telling good ones from bad ones at a glance is not.</div>
+            <div data-k="approach">Built a Flask web app that clusters nearby amenities with KMeans and renders them with a color-coding scheme — hue by category, shade by user rating — so quality and type read instantly on the map.</div>
+            <div data-k="result">Mini project for third year engineering — delivered a working clustering and visualization pipeline end to end.</div>
+            <a data-k="repo" href="https://github.com/Karan-Naik-08/MyLoc-Amenities-Finder" target="_blank" rel="noreferrer">https://github.com/Karan-Naik-08/MyLoc-Amenities-Finder</a>
+          </div>
+        </article>
+        <article class="tile" data-project="mmrda-internship">
+          <span class="t-num" aria-hidden="true">07</span>
+          <div class="t-body">
+            <p class="t-tech">Python · scikit-learn · EDA</p>
+            <h3 class="t-title"><button type="button" class="t-open" data-cursor="Open" aria-haspopup="dialog">MMRDA Data Analysis Internship</button></h3>
+            <span class="t-cta" aria-hidden="true">Read case study &rarr;</span>
+          </div>
+          <div class="cs" hidden>
+            <div data-k="problem">A 2-week internship at the Mumbai Metropolitan Region Development Authority (MMRDA) needed hands-on proof of exploratory data analysis and baseline ML across varied datasets.</div>
+            <div data-k="approach">Ran EDA and built baseline models — regression (house prices), classification (income, survival, wine quality, activity recognition) — across 10 public datasets including Titanic, Boston Housing, and Census Income.</div>
+            <div data-k="result">Case study across 10 datasets, applying linear/decision-tree regression and logistic regression, KNN, decision trees, and random forest classification as appropriate to each problem.</div>
+            <a data-k="repo" href="https://github.com/Karan-Naik-08/Data-Science_Internship-Vcet" target="_blank" rel="noreferrer">https://github.com/Karan-Naik-08/Data-Science_Internship-Vcet</a>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="hs-bar" aria-hidden="true"><i id="hs-bar"></i></div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="dark">
+    <p class="eyebrow">(06) Education</p>
+    <h2 class="display split">The degree</h2>
+    <article class="edu">
+      <div>
+        <h3>Bachelor of Engineering, Computer Science &amp; Engineering (Data Science)</h3>
+        <p>Vidyavardhini's College of Engineering and Technology, Vasai · Jun 2020 – Jun 2024</p>
+        <ul>
+          <li>CGPA: 8.75</li>
+          <li>Honors in Artificial Intelligence and Machine Learning — CGPA: 7</li>
+        </ul>
+      </div>
+      <span class="edu-n" aria-hidden="true">8.75</span>
+    </article>
+  </section>
+</main>
+
+<footer id="contact" class="light">
+  <p class="eyebrow">(07) Contact</p>
+  <h2 class="display split">Say hello.</h2>
+  <a class="mail" href="mailto:naikaran08@gmail.com" data-magnetic data-cursor="Write">naikaran08@gmail.com</a>
+  <ul class="links">
+    <li><a href="https://linkedin.com/in/karannaik08/" target="_blank" rel="noreferrer" data-magnetic data-cursor="Open">LinkedIn</a></li>
+    <li><a href="https://github.com/Karan-Naik-08" target="_blank" rel="noreferrer" data-magnetic data-cursor="Open">GitHub</a></li>
+  </ul>
+  <p class="fine">&copy; 2026 Karan Naik.</p>
+</footer>
+
+<!-- CASE STUDY -->
+<dialog id="case" class="case" aria-labelledby="case-title">
+  <div class="case-top">
+    <span class="case-idx" id="case-idx"></span>
+    <button type="button" class="case-close" id="case-close" data-cursor="Close">Close <span aria-hidden="true">&times;</span></button>
+  </div>
+  <p class="case-tech" id="case-tech"></p>
+  <h2 class="case-title" id="case-title"></h2>
+  <div class="case-cols">
+    <div><h3>Problem</h3><p id="case-problem"></p></div>
+    <div><h3>Approach</h3><p id="case-approach"></p></div>
+    <div><h3>Result</h3><p id="case-result"></p></div>
+  </div>
+  <div class="case-foot">
+    <a id="case-repo" class="btn btn-fill" href="#" target="_blank" rel="noreferrer" data-cursor="Open">View on GitHub</a>
+    <button type="button" class="btn btn-line" id="case-next" data-cursor="Next">Next case study &rarr;</button>
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/hero.js?v=2"></script>
+<script src="js/app.js?v=2"></script>
 </body>
 </html>
